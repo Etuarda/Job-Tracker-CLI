@@ -1,0 +1,27 @@
+<section class="auth card" aria-labelledby="register-title">
+  <h2 id="register-title">Criar conta</h2>
+  <p class="muted">Crie sua conta para salvar suas candidaturas na nuvem.</p>
+
+  <form id="register-form" novalidate>
+    <div class="field">
+      <label for="reg-name">Nome</label>
+      <input id="reg-name" name="name" type="text" autocomplete="name" required />
+    </div>
+
+    <div class="field">
+      <label for="reg-email">E-mail</label>
+      <input id="reg-email" name="email" type="email" autocomplete="email" required />
+    </div>
+
+    <div class="field">
+      <label for="reg-password">Senha</label>
+      <input id="reg-password" name="password" type="password" minlength="8" autocomplete="new-password" required />
+      <small class="hint">Mínimo de 8 caracteres.</small>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+    <button class="btn-ghost" type="button" id="go-login">Já tenho conta</button>
+  </form>
+</section>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>

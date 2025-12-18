@@ -1,0 +1,17 @@
+.auth{padding:22px;max-width:520px;margin:24px auto}
+.auth h2{margin-bottom:6px;color:var(--accent)}
+.auth .muted{margin-bottom:14px}
+.field{display:grid;gap:6px;margin:12px 0}
+input{
+  width:100%;height:44px;padding:12px 14px;
+  border:1px solid var(--border);border-radius:12px;background:#fff;
+}
+input:focus{border-color:var(--accent)}
+.hint{color:var(--muted)}
+.toast{
+  position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-12px);
+  background:#111;color:#fff;padding:10px 16px;border-radius:12px;
+  box-shadow:var(--shadow-md);opacity:0;transition:opacity .2s, transform .2s;
+  z-index:200;display:none
+}
+.toast.show{display:block;opacity:1;transform:translateX(-50%) translateY(0)}

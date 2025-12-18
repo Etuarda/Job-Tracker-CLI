@@ -1,0 +1,60 @@
+.toolbar{
+  display:flex;flex-wrap:wrap;gap:12px;margin:16px 0;padding:16px;
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  background:var(--surface);box-shadow:var(--shadow-sm)
+}
+.search-container{position:relative;flex:1;min-width:240px}
+#search-input{padding-left:12px;width:100%;height:44px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.filter-group select{min-width:180px;height:44px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.table-container{overflow-x:auto}
+.application-table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:-10px}
+.application-table thead th{padding:8px 12px;font:600 12px/1 system-ui;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border)}
+.sortable{cursor:pointer;user-select:none;display:flex;gap:4px;align-items:center}
+.sort-icon{font-size:.75em;color:var(--accent)}
+.application-table tbody tr{background:#fff;box-shadow:var(--shadow-sm)}
+.application-table td{padding:16px 12px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.application-table tbody tr td:first-child{border-left:1px solid var(--border);border-top-left-radius:12px;border-bottom-left-radius:12px}
+.application-table tbody tr td:last-child{border-right:1px solid var(--border);border-top-right-radius:12px;border-bottom-right-radius:12px}
+.status-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font:600 14px/1 system-ui}
+.status-dot{width:8px;height:8px;border-radius:50%}
+.status-chip[data-status="Não Iniciado"]{background:#FFF7E8;color:#7A5D28}
+.status-chip[data-status="Não Iniciado"] .status-dot{background:#E2A348}
+.status-chip[data-status="Em Andamento"]{background:#EAF7F1;color:#235946}
+.status-chip[data-status="Em Andamento"] .status-dot{background:#4CAF82}
+.status-chip[data-status="Aprovado"]{background:#EEF0FF;color:#3A3CA2}
+.status-chip[data-status="Aprovado"] .status-dot{background:#7C6CF5}
+.status-chip[data-status="Reprovado"]{background:#FFECE8;color:#7E2F23}
+.status-chip[data-status="Reprovado"] .status-dot{background:#E26D5A}
+
+.status-select{width:170px;height:44px;margin-left:10px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.btn-delete{background:var(--critical);color:#fff;border:0;padding:8px 12px;border-radius:10px;cursor:pointer;height:44px}
+.btn-delete:hover{opacity:.92}
+
+.empty-state{display:none;margin-top:20px;padding:32px;border:2px dashed var(--border);border-radius:12px;text-align:center;color:var(--muted)}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:100;opacity:0;transition:opacity .2s}
+.modal.open{display:flex;opacity:1}
+.modal-content{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-md);padding:24px;max-width:520px;width:90%;position:relative}
+.close-btn{position:absolute;top:10px;right:14px;font-size:28px;background:transparent;border:0;color:var(--muted);cursor:pointer}
+#modal-title{color:var(--accent);margin:0 0 14px 0}
+.form-group{margin-bottom:12px;display:grid;gap:6px}
+.form-group input{width:100%;height:44px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.form-submit-btn{width:100%;height:44px;border-radius:12px;border:0;cursor:pointer}
+
+.toast{
+  position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-12px);
+  background:#111;color:#fff;padding:10px 16px;border-radius:12px;
+  box-shadow:var(--shadow-md);opacity:0;transition:opacity .2s, transform .2s;
+  z-index:200;display:none
+}
+.toast.show{display:block;opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:640px){
+  .application-table, .application-table tbody, .application-table tr, .application-table td{display:block;width:100%}
+  .application-table thead{display:none}
+  .application-table tr{margin-bottom:16px;padding:12px;border-radius:12px;border:1px solid var(--border)}
+  .application-table td{border:0;border-bottom:1px solid var(--border);position:relative;padding:10px 12px;text-align:right}
+  .application-table td::before{content:attr(data-label);position:absolute;left:12px;color:var(--muted);font-weight:600}
+  .application-table tr td:last-child{border-bottom:0}
+  .status-select{width:100%;margin:10px 0 0}
+}

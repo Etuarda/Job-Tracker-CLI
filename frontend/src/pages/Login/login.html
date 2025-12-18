@@ -1,0 +1,22 @@
+<section class="auth card" aria-labelledby="login-title">
+  <h2 id="login-title">Entrar</h2>
+  <p class="muted">Acesse sua conta para ver suas candidaturas.</p>
+
+  <form id="login-form" novalidate>
+    <div class="field">
+      <label for="login-email">E-mail</label>
+      <input id="login-email" name="email" type="email" autocomplete="email" required />
+    </div>
+
+    <div class="field">
+      <label for="login-password">Senha</label>
+      <input id="login-password" name="password" type="password" autocomplete="current-password" minlength="8" required />
+      <small class="hint">Mínimo de 8 caracteres.</small>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Entrar</button>
+    <button class="btn-ghost" type="button" id="go-register">Criar conta</button>
+  </form>
+</section>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
