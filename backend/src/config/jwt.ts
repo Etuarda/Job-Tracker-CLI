@@ -1,10 +1,9 @@
-const secret = process.env.JWT_SECRET;
+import type { SignOptions, Secret } from 'jsonwebtoken';
 
-if (!secret) {
-  throw new Error('JWT_SECRET não definido no ambiente');
-}
-
-export const jwtConfig = {
-  secret,
-  expiresIn: '1d',
+export const jwtConfig: {
+  secret: Secret;
+  expiresIn: SignOptions['expiresIn'];
+} = {
+  secret: process.env.JWT_SECRET as Secret,
+  expiresIn: '7d'
 };
