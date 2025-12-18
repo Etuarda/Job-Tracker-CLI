@@ -1,8 +1,4 @@
-
 import 'dotenv/config';
-import dotenv from 'dotenv';
-dotenv.config();
-
 import app from './app.js';
 import { connectDB } from './config/db.js';
 
@@ -16,7 +12,9 @@ if (!mongoUrl) {
 
 connectDB(mongoUrl)
   .then(() => {
-    app.listen(PORT, () => console.log(`[api] http://localhost:${PORT}`));
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`[api] http://0.0.0.0:${PORT}`);
+    });
   })
   .catch((err) => {
     console.error('[db] failed', err);
